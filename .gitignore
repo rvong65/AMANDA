@@ -1,0 +1,5 @@
+# ignore database stuff
+db.sqlite3
+
+# ignore node modules
+/Website/frontend/node_modules/
