@@ -3,3 +3,6 @@ db.sqlite3
 
 # ignore node modules
 /Website/frontend/node_modules/
+
+# ignore cache
+*/__pycache__/
