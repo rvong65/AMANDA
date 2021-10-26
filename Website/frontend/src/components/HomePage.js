@@ -34,7 +34,6 @@ export default class HomePage extends Component {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
                 user_msg: this.state.user_msg,
-                // upload_img: this.state.upload_img
             })
         };
 
@@ -51,7 +50,7 @@ export default class HomePage extends Component {
                         <Grid container spacing={1}>
                             <Grid item xs={12} align="center">
                                 <Typography component='h4' variant="h4">
-                                    Stuff
+                                    More Stasdsacsuff
                                 </Typography>
                             </Grid>
                             <Grid item xs={12} align="center">
