@@ -4,5 +4,8 @@ db.sqlite3
 # ignore node modules
 /Website/frontend/node_modules/
 
-# ignore cache
+# ignore pycache folders
 */__pycache__/
+
+# ignore static frontend files
+*/Website/frontend/static/frontend/
