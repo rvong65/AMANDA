@@ -1,5 +1,7 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import AboutUs from "./AboutUs";
+import Message from "./Message";
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 import { Input, Button, Grid, Typography, TextField, FormHelperText, FormControl } from "@material-ui/core";
 import axios from "axios";
@@ -8,22 +10,42 @@ export default class HomePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            user_msg: "",
-            upload_img: null,
-            inputs: [""]
+            messages: [{
+                username: "Medical Assistant",
+                content: <p>Hello</p>
+            }]
         };
 
-        this.handleTextInput = this.handleTextInput.bind(this);
-        this.appendInput = this.appendInput.bind(this);
+        this.submitMessage = this.submitMessage.bind(this);
+        // this.handleTextInput = this.handleTextInput.bind(this);
         // this.handleImageChange = this.handleImageChange.bind(this);
         // this.handleSendMessagePressed = this.handleSendMessagePressed.bind(this);
         // this.handleImageUpload = this.handleImageUpload.bind(this);
     }
 
-    handleTextInput(e) {
+    submitMessage(e) {
+        e.preventDefault();
+
         this.setState({
-            user_msg: e.target.value
+            messages: this.state.messages.concat([{
+                username: "User",
+                content: <p>{ReactDOM.findDOMNode(this.refs.msg).value}</p>,
+            }])
+        }, () => {
+            ReactDOM.findDOMNode(this.refs.msg).value = "";
         });
+    }
+
+    componentDidMount() {
+        this.scrollToBot();
+    }
+
+    componentDidUpdate() {
+        this.scrollToBot();
+    }
+
+    scrollToBot() {
+        ReactDOM.findDOMNode(this.refs.messages).scrollTop = ReactDOM.findDOMNode(this.refs.messages).scrollHeight;
     }
 
     // handleImageChange(e) {
@@ -63,58 +85,24 @@ export default class HomePage extends Component {
     //         .catch(err => console.log(err))
     // }
 
-    appendInput(e) {
-        e.preventDefault();
-        this.setState(prevState => ({
-            inputs: [...prevState.inputs, this.state.user_msg]
-        }));
-        console.log(this.state);
-    }
-
     render() {
+        const username = "User";
+        const { messages } = this.state;
+
         return (
             <Router>
                 <Switch>
                     <Route exact path='/'>
-                        <div>
-                            <form>
-                                <div id="msgArea">
-                                    {this.state.inputs.map(input => <p>{input}</p>)}
-                                </div>
-                                <input placeholder="Input user msg" onChange={this.handleTextInput} />
-                                <button onClick={this.appendInput}>Send</button>
+                        <div className="chatroom">
+                            <h4>Medical Assistant</h4>
+                            <ul className="messages" ref="messages">
+                                {messages.map((message) => <Message message={message} user={username} />)}
+                            </ul>
+                            <form className="input" onSubmit={this.submitMessage}>
+                                <input id="userinput" type="text" ref="msg" />
+                                <input type="submit" value="Submit" />
                             </form>
                         </div>
-
-
-                        {/* <Grid container spacing={2}>
-                            <Grid item xs={12} align="center">
-                                <Typography component='h4' variant="h4">
-                                    Title
-                                </Typography>
-                            </Grid>
-                            <Grid item xs={12} align="center">
-
-                            </Grid>
-                            <Grid item xs={12} align="center">
-                                <FormControl>
-                                    <TextField required={false} onChange={this.handleTextInput} />
-                                    <Button color="primary" variant="contained" onClick={this.handleSendMessagePressed}>Send</Button>
-                                </FormControl>
-
-                            </Grid>
-                            <Grid item xs={12} align="center">
-                                <form onSubmit={this.handleImageUpload}>
-                                    <Input type="file" accpt="image/png, image/jpeg" required={false} id="upload_img" onChange={this.handleImageChange} />
-                                    <Button type="submit" color="primary" variant="contained">Submit</Button>
-                                </form>
-                            </Grid>
-                            <Grid item xs={12} align="center">
-                                <Button color="secondary" variant="contained" to="/about" component={Link}>
-                                    About Us
-                                </Button>
-                            </Grid>
-                        </Grid> */}
                     </Route>
                     <Route path='/about' component={AboutUs} />
                 </Switch>
