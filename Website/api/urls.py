@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import TextView, ImageUploadView
+from .views import TextView, ImageUploadView, SendMessageView
 
 urlpatterns = [
-    path('text/', TextView.as_view()),
-    path('post/', ImageUploadView.as_view())
+    path('', TextView.as_view()),
+    path('text/', SendMessageView.as_view()),
+    path('post/', ImageUploadView.as_view(), name="image_posts")
 ]

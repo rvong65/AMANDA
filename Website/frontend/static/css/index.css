@@ -100,7 +100,7 @@ p {
   font-size: 14px;
 }
 
-.chatroom .input input[type="submit"] {
+.chatroom .input button[type="submit"] {
   background: transparent;
   border: 1px solid #1EE494;
   height: 30px;
@@ -113,7 +113,7 @@ p {
   transition: all 0.3s ease;
 }
 
-.chatroom .input input[type="submit"]:hover {
+.chatroom .input button[type="submit"]:hover {
   background: #1EE494;
   color: #FFF;
 }

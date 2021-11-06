@@ -15,4 +15,4 @@ class SendMessageSerializer(serializers.ModelSerializer):
 class ImageUploadSerializer(serializers.ModelSerializer):
     class Meta:
         model = ImageUpload
-        fields = "__all__"
+        fields = '__all__'

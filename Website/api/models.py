@@ -6,4 +6,4 @@ class TextArea(models.Model):
     # upload_img = models.FileField(upload_to='uploads/% Y/% m/% d/', default="")
 
 class ImageUpload(models.Model):
-    upload_img = models.ImageField(upload_to='post_images')
+    image = models.ImageField(upload_to='post_images')

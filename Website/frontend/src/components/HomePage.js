@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import AboutUs from "./AboutUs";
 import Message from "./Message";
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
@@ -13,27 +12,31 @@ export default class HomePage extends Component {
             messages: [{
                 username: "Medical Assistant",
                 content: <p>Hello</p>
-            }]
+            }],
+            image: null
         };
 
         this.submitMessage = this.submitMessage.bind(this);
+        this.imageChange = this.imageChange.bind(this);
+        this.printState = this.printState.bind(this);
         // this.handleTextInput = this.handleTextInput.bind(this);
-        // this.handleImageChange = this.handleImageChange.bind(this);
         // this.handleSendMessagePressed = this.handleSendMessagePressed.bind(this);
-        // this.handleImageUpload = this.handleImageUpload.bind(this);
+        this.handleImageUpload = this.handleImageUpload.bind(this);
     }
 
     submitMessage(e) {
         e.preventDefault();
-
-        this.setState({
-            messages: this.state.messages.concat([{
-                username: "User",
-                content: <p>{ReactDOM.findDOMNode(this.refs.msg).value}</p>,
-            }])
-        }, () => {
-            ReactDOM.findDOMNode(this.refs.msg).value = "";
-        });
+        
+        if (document.getElementById("user-input").value != "") {
+            this.setState({
+                messages: this.state.messages.concat([{
+                    username: "User",
+                    content: <p>{document.getElementById("user-input").value}</p>,
+                }])
+            }, () => {
+                document.getElementById("user-input").value = "";
+            });
+        }
     }
 
     componentDidMount() {
@@ -45,14 +48,15 @@ export default class HomePage extends Component {
     }
 
     scrollToBot() {
-        ReactDOM.findDOMNode(this.refs.messages).scrollTop = ReactDOM.findDOMNode(this.refs.messages).scrollHeight;
+        document.getElementById("messages").scrollTop = document.getElementById("messages").scrollHeight;
     }
 
-    // handleImageChange(e) {
-    //     this.setState({
-    //         upload_img: e.target.files[0]
-    //     });
-    // }
+    imageChange(e) {
+    }
+
+    printState() {
+        console.log(this.state);
+    }
 
     // handleSendMessagePressed(e) {
     //     const requestOptions = {
@@ -68,22 +72,24 @@ export default class HomePage extends Component {
     //         .then((data) => console.log(data));
     // }
 
-    // handleImageUpload(e) {
-    //     e.preventDefault();
-    //     console.log(this.state);
-    //     let form_data = new FormData();
-    //     form_data.append('upload_img', this.state.upload_img, this.state.upload_img.name);
-    //     let url = 'http://127.0.0.1:8000/api/post/';
-    //     axios.post(url, form_data, {
-    //       headers: {
-    //         'content-type': 'multipart/form-data'
-    //       }
-    //     })
-    //         .then(res => {
-    //           console.log(res.data);
-    //         })
-    //         .catch(err => console.log(err))
-    // }
+    handleImageUpload = async (e) => {
+        e.preventDefault();
+        await this.setState({ image: e.target.files[0] });
+
+        console.log(this.state);
+        let form_data = new FormData();
+        form_data.append('image', this.state.image, this.state.image.name);
+        let url = '/api/post/';
+        axios.post(url, form_data, {
+          headers: {
+            'content-type': 'multipart/form-data'
+          }
+        })
+            .then(res => {
+              console.log(res.data);
+            })
+            .catch(err => console.log(err))
+      };
 
     render() {
         const username = "User";
@@ -95,14 +101,17 @@ export default class HomePage extends Component {
                     <Route exact path='/'>
                         <div className="chatroom">
                             <h4>Medical Assistant</h4>
-                            <ul className="messages" ref="messages">
+                            <ul className="messages" id="messages">
                                 {messages.map((message) => <Message message={message} user={username} />)}
                             </ul>
                             <form className="input" onSubmit={this.submitMessage}>
-                                <input id="userinput" type="text" ref="msg" />
-                                <input type="submit" value="Submit" />
+                                <input id="user-input" type="text" ref="msg" />
+                                <button type="submit">Send</button>
+                                <input type="file" accept="image/png, image/jpeg" hidden id="image-upload" onChange={this.handleImageUpload} />
+                                <button onClick={() => document.getElementById("image-upload").click()} id="image-upload-button">Upload</button>
                             </form>
                         </div>
+                        <button onClick={this.printState}>State</button>
                     </Route>
                     <Route path='/about' component={AboutUs} />
                 </Switch>

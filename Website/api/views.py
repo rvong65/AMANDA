@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser, FormParser
 
 # Create your views here.
-class TextView(generics.CreateAPIView):
+class TextView(generics.ListAPIView):
     queryset = TextArea.objects.all()
     serializer_class = TextSerializer
 
