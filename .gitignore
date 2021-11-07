@@ -1,15 +1,14 @@
 # ignore database stuff
 db.sqlite3
 
-# ignore node modules
-/Website/frontend/node_modules/
-
 # ignore pycache folders
-*/__pycache__/
+__pycache__/
 
 # ignore static frontend files
-*/Website/frontend/static/frontend
+Website/frontend/static/frontend/*
 
 # ignore installed node modules
-/node_modules/
+node_modules/
 
+# uploaded images
+Website/media/post_images/*
