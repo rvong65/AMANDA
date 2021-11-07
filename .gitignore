@@ -10,5 +10,7 @@ Website/frontend/static/frontend/*
 # ignore installed node modules
 node_modules/
 
-# uploaded images
+# uploaded images, but not folder
 Website/media/post_images/*
+
+!.gitkeep
