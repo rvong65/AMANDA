@@ -1,5 +1,5 @@
 import torch
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='/media/weights/best.pt')
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='/media/yolov5_weights.pt')
 
 #Function takes in an image and returns a json file containing prediction
 def generate_response(img_path): 
