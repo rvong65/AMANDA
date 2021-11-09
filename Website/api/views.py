@@ -5,6 +5,7 @@ from .serializers import TextSerializer, SendMessageSerializer, ImageUploadSeria
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser, FormParser
+import subprocess, pathlib
 
 # Create your views here.
 class TextView(generics.ListAPIView):
@@ -20,17 +21,18 @@ class SendMessageView(APIView):
 
         serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
-            user_msg = serializer.data.user_msg
+            message = serializer.data.message
             queryset = TextArea.objects.filter()
 
             if queryset.exists():
-                text=queryset[0]
-                text.user_msg = user_msg
-                text.save(update_fields=['user_msg'])
+                text = queryset[0]
+                text.message = message
+                text.save(update_fields=['message'])
             else:
-                text = TextArea(user_msg=user_msg)
-
-            return Response(TextSerializer(text).data, status=status.HTTP_200_OK)
+                text = TextArea(message=message)
+                text.save()
+        
+        return Response(TextSerializer(text).data, status=status.HTTP_201_CREATED)
 
 class ImageUploadView(APIView):
     parser_classes = (MultiPartParser, FormParser)
@@ -38,6 +40,10 @@ class ImageUploadView(APIView):
     def get(self, request, *args, **kwargs):
         posts = ImageUpload.objects.all()
         serializer = ImageUploadSerializer(posts, many=True)
+        image_name = serializer.data[0]["title"]
+        process = subprocess.run(["python", "generate_responses.py", image_name], stdout=subprocess.PIPE)
+        output = process.stdout
+        print(output)
         return Response(serializer.data)
 
     def post(self, request, *args, **kwargs):
