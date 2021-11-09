@@ -5,12 +5,12 @@ from .models import TextArea, ImageUpload
 class TextSerializer(serializers.ModelSerializer):
     class Meta:
         model = TextArea
-        fields = ('id', 'user_msg')
+        fields = ('id', 'message')
 
 class SendMessageSerializer(serializers.ModelSerializer):
     class Meta:
         model = TextArea
-        fields = ('user_msg')
+        fields = '__all__'
 
 class ImageUploadSerializer(serializers.ModelSerializer):
     class Meta:
