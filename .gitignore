@@ -3,6 +3,7 @@ db.sqlite3
 
 # ignore pycache folders
 __pycache__/
+migrations/
 
 # ignore static frontend files
 Website/frontend/static/frontend/*
