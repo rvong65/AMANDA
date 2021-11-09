@@ -1,3 +1,4 @@
+from django.db.models import query
 from django.shortcuts import render
 from rest_framework import generics, status
 from .models import TextArea, ImageUpload
@@ -5,7 +6,7 @@ from .serializers import TextSerializer, SendMessageSerializer, ImageUploadSeria
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser, FormParser
-import subprocess, pathlib
+import subprocess
 
 # Create your views here.
 class TextView(generics.ListAPIView):
@@ -21,7 +22,7 @@ class SendMessageView(APIView):
 
         serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
-            message = serializer.data.message
+            message = serializer.data['message']
             queryset = TextArea.objects.filter()
 
             if queryset.exists():
@@ -40,10 +41,12 @@ class ImageUploadView(APIView):
     def get(self, request, *args, **kwargs):
         posts = ImageUpload.objects.all()
         serializer = ImageUploadSerializer(posts, many=True)
-        image_name = serializer.data[0]["title"]
-        process = subprocess.run(["python", "generate_responses.py", image_name], stdout=subprocess.PIPE)
-        output = process.stdout
-        print(output)
+
+        # Get name of most recent image upload
+        image_name = serializer.data[len(serializer.data)-1]["title"]
+        
+        # Run generate_responses.py passing image_name to sys.argv list
+        subprocess.run(["python", "./media/responses/generate_responses.py", image_name])
         return Response(serializer.data)
 
     def post(self, request, *args, **kwargs):
