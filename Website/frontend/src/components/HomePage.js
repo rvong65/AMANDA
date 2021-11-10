@@ -50,10 +50,12 @@ export default class HomePage extends Component {
         e.preventDefault();
         await this.setState({ image: e.target.files[0] });
 
+        // Create formData object to post to API
         let formData = new FormData();
         formData.append('name', this.state.image.name);
         formData.append('image', this.state.image);
 
+        // Post image data to API
         await axios.post("/api/", formData, {
           headers: {
             'content-type': 'multipart/form-data'
@@ -64,6 +66,15 @@ export default class HomePage extends Component {
             })
             .catch(err => console.log(err));
 
+        // Send "Uploaded (image name) message"
+        this.setState({
+            messages: this.state.messages.concat([{
+                username: "User",
+                content: <p>Uploaded {this.state.image.name}</p>,
+            }])
+        });
+
+        // Send message on message area
         this.useMessageData();
       };
 
