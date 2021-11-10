@@ -1,16 +1,6 @@
 from typing import Text
 from rest_framework import serializers
-from .models import TextArea, ImageUpload
-
-class TextSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = TextArea
-        fields = ('id', 'message')
-
-class SendMessageSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = TextArea
-        fields = '__all__'
+from .models import ImageUpload
 
 class ImageUploadSerializer(serializers.ModelSerializer):
     class Meta:
