@@ -1,12 +1,10 @@
-from django.db.models import query
-from django.shortcuts import render
-from rest_framework import generics, status
+from rest_framework import status
 from .models import ImageUpload
 from .serializers import ImageUploadSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser, FormParser
-import torch, json
+import torch, json, os
 
 # Create your views here.
 class ImageUploadView(APIView):
@@ -16,14 +14,21 @@ class ImageUploadView(APIView):
         posts = ImageUpload.objects.all()
         serializer = ImageUploadSerializer(posts, many=True)
 
+        # Get name of image name and concats it to fixed directory
+        image_data = dict(serializer.data[len(serializer.data)-1]) # most recent upload
+        img_path = "./media/post_images/" + image_data["name"] 
 
         # Takes in an image path and returns a json file with the prediction
         model = torch.hub.load('ultralytics/yolov5', 'custom', path='./media/yolov5_weights.pt')
-        image_data = dict(serializer.data[len(serializer.data)-1]) # most recent upload
-        img_path = "./media/post_images/" + image_data["name"] 
         results = model(img_path)
         df = results.pandas().xyxy[0]
         json_output = json.loads(df.to_json())
+
+        # Deletes temporary image
+        if os.path.exists(img_path):
+            os.remove(img_path)
+        else:
+            print("The file does not exist")
 
         return Response(json_output["name"]["0"])
 
