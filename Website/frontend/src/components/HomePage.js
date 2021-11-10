@@ -15,8 +15,6 @@ export default class HomePage extends Component {
             image: null,
         };
 
-        this.handleSendMessagePressed = this.handleSendMessagePressed.bind(this);
-        this.printState = this.printState.bind(this);
         this.handleImageUpload = this.handleImageUpload.bind(this);
     }
 
@@ -33,45 +31,19 @@ export default class HomePage extends Component {
         document.getElementById("messages").scrollTop = document.getElementById("messages").scrollHeight;
     }
 
-    printState() {
-        console.log(this.state);
-    }
-
-    getMessageData() {
-        fetch("/api/post/") // need to change to text model
+    useMessageData() {
+        fetch("/api/") // need to change to text model
             .then((response) => response.json())
-            .then((data) => console.log(data)); 
+            .then((data) => this.submitReport(data)); 
     }
 
-    submitMessage(e) {
-        e.preventDefault();
-        
-        if (document.getElementById("user-input").value != "") {
-            this.setState({
-                messages: this.state.messages.concat([{
-                    username: "User",
-                    content: <p>{document.getElementById("user-input").value}</p>,
-                }])
-            }, () => {
-                document.getElementById("user-input").value = "";
-            });
-        }
-    }
-
-    handleSendMessagePressed(e) {
-        e.preventDefault();
-
-        const requestOptions = {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                user_msg: this.state.user_msg,
-            })
-        };
-
-        fetch('/api/text/', requestOptions)
-            .then((response) => response.json())
-            .then((data) => console.log(data));
+    submitReport(messageContent) {
+        this.setState({
+            messages: this.state.messages.concat([{
+                username: "Medical Assistant",
+                content: <p>{messageContent}</p>,
+            }])
+        });
     }
 
     handleImageUpload = async (e) => {
@@ -79,10 +51,10 @@ export default class HomePage extends Component {
         await this.setState({ image: e.target.files[0] });
 
         let formData = new FormData();
+        formData.append('name', this.state.image.name);
         formData.append('image', this.state.image);
-        formData.append('title', this.state.image.name);
 
-        await axios.post("/api/post/", formData, {
+        await axios.post("/api/", formData, {
           headers: {
             'content-type': 'multipart/form-data'
           }
@@ -91,6 +63,8 @@ export default class HomePage extends Component {
               console.log(res.data);
             })
             .catch(err => console.log(err));
+
+        this.useMessageData();
       };
 
     render() {
@@ -106,17 +80,11 @@ export default class HomePage extends Component {
                             <ul className="messages" id="messages">
                                 {messages.map((message) => <Message message={message} user={username} />)}
                             </ul>
-                            <form onSubmit={this.handleSendMessagePressed}>
-                                <input id="user-input" type="text" ref="msg" />
-                                <button type="submit">Send</button>
-                            </form>
                             <div className="input">
                                 <input type="file" accept="image/png, image/jpeg" hidden id="image-upload" onChange={this.handleImageUpload} />
                                 <button onClick={() => document.getElementById("image-upload").click()} id="image-upload-button">Upload</button>
                             </div>
                         </div>
-                        <button onClick={this.printState}>State</button>
-                        <button onClick={this.getMessageData}>API</button>
                     </Route>
                     <Route path='/about' component={AboutUs} />
                 </Switch>
