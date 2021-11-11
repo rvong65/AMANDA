@@ -30,7 +30,12 @@ class ImageUploadView(APIView):
         else:
             print("The file does not exist")
 
-        return Response(json_output["name"]["0"])
+        json_response = {
+            "name": json_output["name"]["0"],
+            "confidence": json_output["confidence"]["0"]
+        }
+
+        return Response(json_response)
 
     def post(self, request, *args, **kwargs):
         posts_serializer = ImageUploadSerializer(data=request.data)
