@@ -6,3 +6,4 @@ Couple things to note:
 * **REQUIRED FOR WORKING ON WEBSITE**
   * In Website folder, pip install django djangorestframework
   * In Website/frontend folder, npm update
+farzaanwawawawaw
