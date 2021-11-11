@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AboutUs from "./AboutUs";
 import Message from "./Message";
+import Navbar from "./Navbar";
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 import axios from "axios";
 
@@ -111,8 +112,8 @@ export default class HomePage extends Component {
             <Router>
                 <Switch>
                     <Route exact path='/'>
+                        <Navbar /> {/* Adding the Navbar made the chatroom align to the left for some reason, so I tried editing the CSS to make the chatroom width the same as the navbar width */}
                         <div className="chatroom">
-                            <h4>Medical Assistant</h4>
                             <ul className="messages" id="messages">
                                 {messages.map((message) => <Message message={message} user={username} />)}
                             </ul>
@@ -122,7 +123,7 @@ export default class HomePage extends Component {
                             </div>
                         </div>
                     </Route>
-                    <Route path='/about' component={AboutUs} />
+                    <Route path='/about' component={AboutUs} />x
                 </Switch>
             </Router>
         )
