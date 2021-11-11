@@ -16,7 +16,7 @@ class ImageUploadView(APIView):
 
         # Get name of image name and concats it to fixed directory
         image_data = dict(serializer.data[len(serializer.data)-1]) # most recent upload
-        img_path = "./media/post_images/" + image_data["image"] 
+        img_path = "." + image_data["image"] 
 
         # Takes in an image path and returns a json file with the prediction
         model = torch.hub.load('ultralytics/yolov5', 'custom', path='./media/yolov5_weights.pt')
