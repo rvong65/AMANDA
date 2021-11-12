@@ -30,10 +30,17 @@ class ImageUploadView(APIView):
         else:
             print("The file does not exist")
 
-        json_response = {
-            "name": json_output["name"]["0"],
-            "confidence": json_output["confidence"]["0"]
-        }
+        # Responds with "No result" if classifier didn't detect anything
+        try :
+            json_response = {
+                "name": json_output["name"]["0"],
+                "confidence": json_output["confidence"]["0"]
+            }
+        except:
+            json_response = {
+                "name": "No result",
+                "confidence": 0
+            }
 
         return Response(json_response)
 
