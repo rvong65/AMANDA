@@ -1,9 +1,14 @@
-# MedicalAssistant
+# A.M.A.N.D.A
 
-Couple things to note:
-* Ctrl + F5 if browser is not updating render
-* Django Rest Framework is infuriating
-* **REQUIRED FOR WORKING ON WEBSITE**
-  * In Website folder, pip install django djangorestframework
-  * In Website/frontend folder, npm update
-farzaanwawawawaw
+## About the project
+
+(Image of final product frontpage)
+
+A.M.A.N.D.A is a trained medical assistant to detect medical diseases and provide treatments. More specifically, it can detect cellulitis and different degrees of burns.
+
+
+## Built With
+* Django Rest Framework
+* React.js
+
+## Installation
