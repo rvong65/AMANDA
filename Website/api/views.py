@@ -1,12 +1,51 @@
-from rest_framework import status
-from .models import ImageUpload
-from .serializers import ImageUploadSerializer
+from rest_framework import serializers, status, generics
+from .models import TextArea, ImageUpload
+from .serializers import TextSerializer, SendMessageSerializer, ImageUploadSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser, FormParser
 import torch, json, os
+from transformers import BlenderbotTokenizer, BlenderbotForConditionalGeneration
+
+#Define Blenderbot
+mname = 'facebook/blenderbot-400M-distill'
+model = BlenderbotForConditionalGeneration.from_pretrained(mname)
+tokenizer = BlenderbotTokenizer.from_pretrained(mname)
+
 
 # Create your views here.
+#Generate messages
+class TextView(generics.ListAPIView):
+    queryset = TextArea.objects.all()
+    serializer_class = TextSerializer
+
+class SendMessageView(APIView):
+    serializer_class = SendMessageSerializer
+
+    def post(self, request, format=None):
+        if not self.request.session.exists(self.request.session.session_key):
+            self.request.session.create()
+
+        serializer = self.serializer_class(data=request.data)
+        if serializer.is_valid():
+            message = serializer.data['message']
+            inputs = tokenizer([message], return_tensors='pt')
+            reply_ids = model.generate(**inputs)
+            results = tokenizer.batch_decode(reply_ids, skip_special_tokens=True)[0]
+            results_json = str(dict(response = results))
+            queryset = TextArea.objects.filter()
+
+            if queryset.exists():
+                text = queryset[0]
+                text.message = message
+                text.save(update_fields=['message'])
+            else:
+                text = TextArea(message=message)
+                text.save()
+
+        return Response(results_json)
+
+#Upload images
 class ImageUploadView(APIView):
     parser_classes = (MultiPartParser, FormParser)
 
