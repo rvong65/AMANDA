@@ -10,12 +10,14 @@ export default class HomePage extends Component {
         super(props);
         this.state = {
             messages: [{
-                username: "Medical Assistant",
-                content: <p>Hello</p>
+                username: "A.M.A.N.D.A.",
+                content: <p>Hello there my name is A.M.A.N.D.A</p>
             }],
             image: null,
         };
 
+    
+        this.submitMessage = this.submitMessage.bind(this);
         this.handleImageUpload = this.handleImageUpload.bind(this);
     }
 
@@ -34,7 +36,7 @@ export default class HomePage extends Component {
 
     // Get Response from API and call submitReport()
     useMessageData() {
-        fetch("/api/")
+        fetch("/api/post/")
             .then((response) => response.json())
             .then((data) => this.submitReport(data.name, data.confidence));  
     }
@@ -43,17 +45,17 @@ export default class HomePage extends Component {
         var response;
         var percent = parseInt(confidence * 100) // I'm assuming that confidence is a value between 0-1, so this just converts to percentage as an integer.
 
-        switch(name.toLowerCase()) {
+        switch(name) {
             case "cellulitis":
                 response = "I\'ve detected a cellulitis infection with " + percent + "% accuracy. Here are some treatment plans:\n\n(1) Cellulitis treatment usually includes a prescription oral antibiotic. Within 3 days of starting an antibiotic, let your doctor know whether the infection is responding to treatment. You’ll need to take the antibiotic for as long as your doctor directs (usually 5 to 10 days).\n\n(2) In the meantime, try these steps to ease any pain and swelling:\n- Place a cool, damp cloth on the affected area as often as needed for your comfort.\n- Ask your doctor to suggest an over-the-counter pain medication to treat pain.\n- Elevate the affected part of your body.\n- Ask your doctor whether it might help to wear compression wraps or stockings.";
                 break;
-            case "first degree burn":
+            case "first_degree_burn":
                 response = "I\'ve detected a first-degree burn with " + percent + "% accuracy. Here are some treatment plans:\n\n(1) Cool the burn. Immediately immerse the burn in cool tap water or apply cold, wet compresses.\n(2) Apply petroleum jelly two to three times daily.\n(3) Cover the burn with a nonstick, sterile bandage.\n(4) Consider taking over-the-counter pain medication.\n(5) Protect the area from the sun.";
                 break;
-            case "second degree burn":
+            case "second_degree_burn":
                 response = "I\'ve detected a second-degree burn with " + percent + "% accuracy. Here are some treatment plans:\n\n(1) Rinse the burn with cool water until the pain stops (15-30 minutes). Do not use ice or ice water, which can cause tissue damage.\n(2) Clean the burn. Do not touch the burn with your hands or anything dirty, because open blisters can easily be infected.\n(3) Bandaging the burn. No need to do this if the burned skin or blister is not broken open.\n(4) If the burn is on a leg or an arm, keep the limb raised as much as possible for the first 24 to 48 hours to decrease swelling.";
                 break;
-            case "third degree burn":
+            case "third_degree_burn":
                 response = "I\'ve detected a third-degree burn with " + percent + "% accuracy. Here are some treatment plans:\n\n(1) Surgery: Third degree burns typically require multiple surgeries to remove burned tissue from the burn site.\n(2) Skin graft: As third degree burns do not heal by themselves, a skin graft is often necessary. A doctor may use a combination of natural skin grafts, artificial skin products, or laboratory-grown skin.\n(3) Intravenous fluids: Some people may receive extra fluids to maintain their blood pressure and prevent shock.\n(4) Medication: A person will likely receive several different medications, such as antibiotics and pain medication, to prevent infection and ease pain.\n(5) Tetanus shot: As tetanus bacteria are more likely to trigger infections through burn wounds, a person may receive a tetanus shot to prevent this.";
                 break;
             default:
@@ -69,6 +71,42 @@ export default class HomePage extends Component {
         });
     }
 
+    submitMessage = async (e) => {
+        e.preventDefault();
+
+        await this.setState({
+                messages: this.state.messages.concat([{
+                    username: "User",
+                    content: <p>{document.getElementById("userinput").value}</p>,
+                }])
+            });
+
+        let formData = new FormData();
+        formData.append('message', document.getElementById("userinput").value);
+        
+        //Post to api and receive a response back
+        await axios.post("/api/text/", formData, {
+            headers: {
+                'content-type': 'multipart/form-data'
+              }
+        })
+              .then(res => {
+                var data = res.data;
+                var obj = eval( '(' + data + ')' );
+                var response = obj.response ;
+                this.setState({
+                    messages: this.state.messages.concat([{
+                        username: "A.M.A.N.D.A.",
+                        content: <p>{response}</p>,
+                    }])
+                });
+                
+              })
+              .catch(err => console.log(err));
+
+        }
+    
+
     handleImageUpload = async (e) => {
         e.preventDefault();
         await this.setState({ image: e.target.files[0] });
@@ -79,13 +117,14 @@ export default class HomePage extends Component {
         formData.append('image', this.state.image);
 
         // Post image data to API
-        await axios.post("/api/", formData, {
+        await axios.post("/api/post/", formData, {
           headers: {
             'content-type': 'multipart/form-data'
           }
         })
             .then(res => {
               console.log(res.data);
+              
             })
             .catch(err => console.log(err));
 
@@ -117,10 +156,16 @@ export default class HomePage extends Component {
                             <ul className="messages" id="messages">
                                 {messages.map((message) => <Message message={message} user={username} />)}
                             </ul>
-                            <div className="input">
+                            <form className="input" onSubmit={this.submitMessage}>
+                                <input id="userinput" placeholder="Enter your message " type="text" ref="msg" onfocus="this.value=''"  />
+                                <button type="submit">
+                                    <ion-icon name="send" size="20px"></ion-icon>
+                                </button>
                                 <input type="file" accept="image/png, image/jpeg" hidden id="image-upload" onChange={this.handleImageUpload} />
-                                <button onClick={() => document.getElementById("image-upload").click()} id="image-upload-button">Upload</button>
-                            </div>
+                                <button onClick={() => document.getElementById("image-upload").click()} id="image-upload-button">
+                                <ion-icon name="cloud-upload"></ion-icon>
+                                </button>
+                            </form>
                         </div>
                     </Route>
                     <Route path='/about' component={AboutUs} />x
