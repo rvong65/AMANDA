@@ -16,7 +16,7 @@ class ImageUploadView(APIView):
 
         # Get name of image name and concats it to fixed directory
         image_data = dict(serializer.data[len(serializer.data)-1]) # most recent upload
-        img_path = "./media/post_images/" + image_data["name"] 
+        img_path = "." + image_data["image"] 
 
         # Takes in an image path and returns a json file with the prediction
         model = torch.hub.load('ultralytics/yolov5', 'custom', path='./media/yolov5_weights.pt')
@@ -30,7 +30,19 @@ class ImageUploadView(APIView):
         else:
             print("The file does not exist")
 
-        return Response(json_output["name"]["0"])
+        # Responds with "No result" if classifier didn't detect anything
+        try :
+            json_response = {
+                "name": json_output["name"]["0"],
+                "confidence": json_output["confidence"]["0"]
+            }
+        except:
+            json_response = {
+                "name": "No result",
+                "confidence": 0
+            }
+
+        return Response(json_response)
 
     def post(self, request, *args, **kwargs):
         posts_serializer = ImageUploadSerializer(data=request.data)
