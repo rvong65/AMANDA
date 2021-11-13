@@ -10,97 +10,104 @@ export default class AboutUs extends Component {
         return (
             <>
                 <Navbar />
-                <div className="about-section">
+                <div class="about-section">
                     <h1>About Us Page</h1>
                     <p>INTRODUCING TEAM XMEN</p>
                 </div>
 
-                {/* <! -- Farzaan Wadiwalla -->
-                <! -- Insert person image: img src = ..jpg link.. --> */}
+                <! -- Farzaan Wadiwalla -->
+                <! -- Insert person image: img src = ..jpg link.. -->
 
-                <h2>Our Team</h2>
-                <div className="row">
-                    <div className="column">
-                        <div className="card">
-                            <img className="profile-picture" src="/w3images/team1.jpg" alt="Farzaan" />
-                            <div className="container">
+                <h2 style="text-align:center">Our Team</h2>
+                <div class="row">
+                    <div class="column">
+                        <div class="card">
+                            <img src="/w3images/team1.jpg" alt="Farzaan" style="width:100%">
+                            <div class="container">
                                 <h2>Farzaan Wadiwalla</h2>
-                                <p className="title">Data Analyst</p>
-                                <p>Add some text description</p>
-                                <p>farzaanw@gmail.com</p>
-                                <p><button className="button">Contact</button></p>
-                            </div>
+                                <p class="title">Data Analyst</p>
+                                <br><br>Add some text description
+                                <br><br>farzaanw@gmail.com
+                            <br><br><button class="button">Contact</button>
                         </div>
                     </div>
+                </div>
 
-                    {/* <! -- Daniel Gao -->
-                    <! -- Insert person image: img src = ..jpg link.. --> */}
+                <! -- Daniel Gao -->
+                <! -- Insert person image: img src = ..jpg link.. -->
 
-                    <div className="column">
-                        <div className="card">
-                            <img className="profile-picture" src="/w3images/team2.jpg" alt="Daniel" />
-                            <div className="container">
-                                <h2>Daniel Gao</h2>
-                                <p className="title">Product Manager</p>
-                                <p>Add some text description</p>
-                                <p>dgao22@siprep.org</p>
-                                <p><button className="button">Contact</button></p>
-                            </div>
-                        </div>
+                <div class="column">
+                    <div class="card">
+                        <img src ="https://cdn.discordapp.com/attachments/885725394110644224/909133221889982524/profile_photo.png" alt="Daniel" style="width:100%">
+                        <div class="container">
+                            <h2>Daniel Gao</h2>
+                            <p class="title">Product Manager</p>
+                            <br><br>I’m a high school student from San Francisco interested in CS and Math. I hope to explore the applications of AI and use them to solve problems in the world.
+                            <br><br>dgao22@siprep.org
+                        <br><br><button class="button">Contact</button>
                     </div>
+                </div>
                 
-                    {/* <! -- Ryan Vong -->
-                    <! -- Insert person image: img src = ..jpg link.. --> */}
+  
+                <! -- Ryan Vong -->
+                <! -- Insert person image: img src = ..jpg link.. -->
 
-                    <div className="column">
-                        <div className="card">
-                            <img className="profile-picture" src="/w3images/team3.jpg" alt="Ryan" />
-                            <div className="container">
-                                <h2>Ryan Vong</h2>
-                                <p className="title">Software Engineer</p>
-                                <p>Add some text description</p>
-                                <p>ryanvong8@gmail.com</p>
-                                <p><button className="button">Contact</button></p>
-                            </div>
-                        </div>
+                <div class="column">
+                    <div class="card">
+                        <img src="/w3images/team3.jpg" alt="Ryan" style="width:100%">
+                        <div class="container">
+                            <h2>Ryan Vong</h2>
+                            <p class="title">Software Engineer/p>
+                            <br><br>Add some text description
+                            <br><br>ryanvong8@gmail.com</p>
+                        <br><br><button class="button">Contact</button>
+                    </div>
+                </div>
+           
+
+                <! -- Jasper Shen -->
+                <! -- Insert person image: img src = ..jpg link.. -->
+
+                <div class="column">
+                    <div class="card">
+                        <img src="/w3images/team3.jpg" alt="Jasper" style="width:100%">
+                        <div class="container">
+                            <h2>Jasper Shen</h2>
+                            <p class="title">Web Designer/p>
+                            <br><br>Add some text description
+                            <br><br>jaspershen21@gmail.com
+                        <br><br><button class="button">Contact</button>
                     </div>
                 </div>
 
-                <div className="row">
+                <! -- Nick Goodchild -->
+                <! -- Insert person image: img src = ..jpg link.. -->
 
-                    {/* <! -- Jasper Shen -->
-                    <! -- Insert person image: img src = ..jpg link.. --> */}
-
-                    <div className="column">
-                        <div className="card">
-                            <img className="profile-picture" src="/w3images/team3.jpg" alt="Jasper" />
-                            <div className="container">
-                                <h2>Jasper Shen</h2>
-                                <p className="title">Product Designer</p>
-                                <p>Add some text description</p>
-                                <p>jaspershen21@gmail.com</p>
-                                <p><button className="button">Contact</button></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* <! -- Nick Goodchild -->
-                    <! -- Insert person image: img src = ..jpg link.. --> */}
-
-                    <div className="column">
-                        <div className="card">
-                            <img className="profile-picture" src="/w3images/team3.jpg" alt="Nick" />
-                                <div className="container">
-                                <h2>Nick Goodchild</h2>
-                                <p className="title">Software Engineer</p>
-                                <p>Add some text description</p>
-                                <p>nickgoodchild654@gmail.com</p>
-                                <p><button className="button">Contact</button></p>
-                            </div>
-                        </div>
+                <div class="column">
+                    <div class="card">
+                        <img src="/w3images/team3.jpg" alt="Nick" style="width:100%">
+                        <div class="container">
+                            <h2>Nick Goodchild</h2>
+                            <p class="title">Software Engineer/p>
+                            <br><br>Add some text description
+                            <br>nickgoodchild654@gmail.com
+                        <br><br><button class="button">Contact</button>
                     </div>
                 </div>
-            </>
-        );
-    }
-}
+
+                <! -- Cameron Jackson -->
+                <! -- Insert person image: img src = ..jpg link.. -->
+
+                <div class="column">
+                    <div class="card">
+                        <img src="/w3images/team2.jpg" alt="Cameron" style="width:100%">
+                        <div class="container">
+                            <h2>Daniel Gao</h2>
+                            <p class="title">Mentor</p>
+                            <br><br>Add some text description
+                        <br><br><button class="button">Contact</button>
+                    </div>
+                </div>
+    
+</body>
+</html>
