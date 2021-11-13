@@ -12,6 +12,9 @@ mname = 'facebook/blenderbot-400M-distill'
 model = BlenderbotForConditionalGeneration.from_pretrained(mname)
 tokenizer = BlenderbotTokenizer.from_pretrained(mname)
 
+# Load yolo classifier
+classifier = torch.hub.load('ultralytics/yolov5', 'custom', path='./media/yolov5_weights.pt')
+
 
 # Create your views here.
 #Generate messages
@@ -58,8 +61,7 @@ class ImageUploadView(APIView):
         img_path = "." + image_data["image"] 
 
         # Takes in an image path and returns a json file with the prediction
-        model = torch.hub.load('ultralytics/yolov5', 'custom', path='./media/yolov5_weights.pt')
-        results = model(img_path)
+        results = classifier(img_path)
         df = results.pandas().xyxy[0]
         json_output = json.loads(df.to_json())
 
