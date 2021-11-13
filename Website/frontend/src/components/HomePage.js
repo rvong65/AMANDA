@@ -154,6 +154,12 @@ export default class HomePage extends Component {
                 <Switch>
                     <Route exact path='/'>
                         <Navbar />
+                        <div className="briefInfo">
+                            <h2> A.M.A.N.D.A.</h2>
+                            <h4> A.M.A.N.D.A. stands for AI Medical Assistant and Neural Detection Application</h4>
+                            <p>Hello, I’m AMANDA, a digital medical assistance AI system. I have the ability to detect skin infections, cellulitis, as well as the three degrees of burns. To receive my diagnosis and treatment plans, please upload an image of your skin condition. Also, feel free to chat with me at any time!
+                            </p>
+                        </div>
                         <div className="chatroom">
                             <ul className="messages" id="messages">
                                 {messages.map((message) => <Message message={message} user={username} />)}
@@ -168,6 +174,9 @@ export default class HomePage extends Component {
                                     <ion-icon name="cloud-upload" />
                                 </button>
                             </form>
+                        </div>
+                        <div className="githubLogo">
+                            <a href="https://github.com/rvong65/MedicalAssistant"><button><ion-icon name="logo-github"></ion-icon></button></a>
                         </div>
                     </Route>
                     <Route path='/about' component={AboutUs} />
