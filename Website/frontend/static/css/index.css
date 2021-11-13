@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Mohave&family=Roboto+Condensed:wght@700&display=swap");
 
+/* Background */
 body {
-  background: linear-gradient(-90deg, #12232E, #203647,  #007CC7 , #4DA8DA);
+  background: linear-gradient(-90deg, #12232E, #203647,  #007CC7);
   background-size: 300% 300%;
   animation: gradient 20s ease infinite;
 }
@@ -18,10 +19,36 @@ body {
   }
 }
 
-
+/* Home Page */
 p {
   margin: 0;
   display: inline-block;
+}
+
+.briefInfo{
+  align-items: center;
+  text-align:center ;
+  width: 1000px;
+  margin-left: 25%;
+  color: white;
+}
+
+.briefInfo h2{
+  font-size: 32px;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #fff,
+        0 0 82px #fff,
+        0 0 92px #fff,
+        0 0 102px #fff,
+        0 0 151px #fff;
+}
+
+.briefInfo h4{
+  font-size: 18px;
 }
 
 .chatroom {
@@ -118,25 +145,18 @@ ion-icon {
   max-width: 600px;
 }
 
-.chatroom .messages .message img {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  position: absolute;
-  top: -10px;
-  left: 0px;
+.githubLogo button{
+  background: white;
+  border: none;
+  height: 40px;
+  width: 43px;
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 100%;
 }
 
-.chatroom .messages .message.right {
-  float: right;
-  clear: both;
-}
-
-.chatroom .messages .message a {
-  text-decoration: none;
-  color:#3498DB;
-}
-
+/* About Us Page */
 *, *:before, *:after {
   box-sizing: inherit;
 }
