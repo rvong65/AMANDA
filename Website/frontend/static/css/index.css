@@ -29,11 +29,12 @@ p {
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 0 0 8px 0 rgba(0,0,0, 0.3);
-  width: 1000px;
   height: 575px;
   align-items: center;
-  margin-left: 475px;
-  margin-top: 100px;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 5%;
+
 }
 
 .chatroom .messages {
@@ -89,11 +90,9 @@ p {
 .chatroom .input input[type=text]{
   height: 35px;
   border-radius:10px;
-  width: 80%;
   margin:10px 0;
   box-shadow:0 0 15px 4px rgba(0.54,0.07,0,0.06);
 }
-
 
 .chatroom .input button {
   background: transparent;
@@ -106,6 +105,7 @@ p {
   transition: all 0.3s ease;
   border-radius: 100%;
 }
+
 ion-icon {
   font-size: 20px;
 }
@@ -113,6 +113,28 @@ ion-icon {
 .chatroom .input button:hover {
   background: darkblue;
   color: #FFF;
+  clear: both;
+  margin: 10px 0;
+  max-width: 600px;
+}
+
+.chatroom .messages .message img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: 0px;
+}
+
+.chatroom .messages .message.right {
+  float: right;
+  clear: both;
+}
+
+.chatroom .messages .message a {
+  text-decoration: none;
+  color:#3498DB;
 }
 
 *, *:before, *:after {
@@ -120,7 +142,7 @@ ion-icon {
 }
 
 .column {
-  float: center;             <! -- previously was left -->
+  float: center;
   width: 33.3%;
   margin-bottom: 16px;
   padding: 0 8px;

@@ -41,9 +41,10 @@ export default class HomePage extends Component {
             .then((data) => this.submitReport(data.name, data.confidence));  
     }
     
+    // Use data from classifier to send a response to User
     submitReport(name, confidence) {
         var response;
-        var percent = parseInt(confidence * 100) // I'm assuming that confidence is a value between 0-1, so this just converts to percentage as an integer.
+        var percent = parseInt(confidence * 100)
 
         switch(name) {
             case "cellulitis":
@@ -62,7 +63,7 @@ export default class HomePage extends Component {
                 response = "I did not detect any infections or burns.";
         }
         
-        // this part is just modeled after the original submitReport function (commented above)
+        // Send message on behalf of AMANDA
         this.setState({
             messages: this.state.messages.concat([{
                 username: "A.M.A.N.D.A.",
@@ -71,18 +72,20 @@ export default class HomePage extends Component {
         });
     }
 
+    // Send POST request to API with custom user message
     submitMessage = async (e) => {
         e.preventDefault();
 
         await this.setState({
                 messages: this.state.messages.concat([{
                     username: "User",
-                    content: <p>{document.getElementById("userinput").value}</p>,
+                    content: <p>{document.getElementById("userinput").value}</p>
                 }])
             });
 
         let formData = new FormData();
         formData.append('message', document.getElementById("userinput").value);
+        document.getElementById("userinput").value="" // Clear user input field
         
         //Post to api and receive a response back
         await axios.post("/api/text/", formData, {
@@ -93,7 +96,7 @@ export default class HomePage extends Component {
               .then(res => {
                 var data = res.data;
                 var obj = eval( '(' + data + ')' );
-                var response = obj.response ;
+                var response = obj.response;
                 this.setState({
                     messages: this.state.messages.concat([{
                         username: "A.M.A.N.D.A.",
@@ -103,10 +106,9 @@ export default class HomePage extends Component {
                 
               })
               .catch(err => console.log(err));
+    }
 
-        }
-    
-
+    // Send POST request to API with uploaded image data
     handleImageUpload = async (e) => {
         e.preventDefault();
         await this.setState({ image: e.target.files[0] });
@@ -151,24 +153,24 @@ export default class HomePage extends Component {
             <Router>
                 <Switch>
                     <Route exact path='/'>
-                        <Navbar /> {/* Adding the Navbar made the chatroom align to the left for some reason, so I tried editing the CSS to make the chatroom width the same as the navbar width */}
+                        <Navbar />
                         <div className="chatroom">
                             <ul className="messages" id="messages">
                                 {messages.map((message) => <Message message={message} user={username} />)}
                             </ul>
                             <form className="input" onSubmit={this.submitMessage}>
-                                <input id="userinput" placeholder="Enter your message " type="text" ref="msg" onfocus="this.value=''"  />
-                                <button type="submit">
-                                    <ion-icon name="send" size="20px"></ion-icon>
+                                <input id="userinput" placeholder="Enter your message " type="text" />
+                                <button>
+                                    <ion-icon name="send" size="20px" />
                                 </button>
                                 <input type="file" accept="image/png, image/jpeg" hidden id="image-upload" onChange={this.handleImageUpload} />
-                                <button onClick={() => document.getElementById("image-upload").click()} id="image-upload-button">
-                                <ion-icon name="cloud-upload"></ion-icon>
+                                <button type="button" onClick={() => document.getElementById("image-upload").click()} id="image-upload-button">
+                                    <ion-icon name="cloud-upload" />
                                 </button>
                             </form>
                         </div>
                     </Route>
-                    <Route path='/about' component={AboutUs} />x
+                    <Route path='/about' component={AboutUs} />
                 </Switch>
             </Router>
         )
