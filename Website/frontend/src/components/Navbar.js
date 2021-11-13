@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 //Style component
 const useStyles = makeStyles((theme) => ({
   navlinks: {
-    marginLeft: theme.spacing(10),
+    marginLeft: theme.spacing(150),
     display: "flex",
     flexGrow: "1",
     borderRadius: "5px"
@@ -20,7 +20,9 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     color: "white",
     fontSize: "20px",
-    marginLeft: theme.spacing(50),
+    justifyContent: 'flex-start',
+    flexDirection: 'row',
+    marginLeft: theme.spacing(10),
     "&:hover": {
       color: "white",
       borderBottom: "1px solid white",
@@ -31,11 +33,11 @@ const useStyles = makeStyles((theme) => ({
 function Navbar(){
   const classes = useStyles();
   return (
-    <AppBar position="static">
+    <AppBar position="static" style={{backgroundColor: "#000080"}}>
       <CssBaseline />
       <Toolbar>
         <Typography variant="h4" className={classes.logo}>
-          Medical Assistant
+          Logo goes here
         </Typography>
           <div className={classes.navlinks}>
             <Link to="/" className={classes.link}>
