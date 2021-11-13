@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ImageUploadView
+from .views import TextView, SendMessageView, ImageUploadView
 
 urlpatterns = [
     path('', TextView.as_view()),

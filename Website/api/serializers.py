@@ -1,6 +1,6 @@
 from typing import Text
 from rest_framework import serializers
-from .models import ImageUpload
+from .models import ImageUpload, TextArea
 
 class TextSerializer(serializers.ModelSerializer):
     class Meta:
