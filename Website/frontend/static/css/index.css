@@ -25,7 +25,7 @@ p {
   display: inline-block;
 }
 
-.briefInfo{
+.briefInfo {
   align-items: center;
   text-align:center ;
   width: 1000px;
@@ -33,7 +33,7 @@ p {
   color: white;
 }
 
-.briefInfo h2{
+.briefInfo h2 {
   font-size: 32px;
     color: #fff;
     text-shadow:
@@ -47,7 +47,7 @@ p {
         0 0 151px #fff;
 }
 
-.briefInfo h4{
+.briefInfo h4 {
   font-size: 18px;
 }
 
@@ -220,4 +220,8 @@ ion-icon {
 
 .profile-picture {
   width: 100%;
+}
+
+h2.our-team {
+  text-align: center;
 }
