@@ -51,7 +51,7 @@ export default class AboutUs extends Component {
                 <! -- Ryan Vong -->
                     <div class="column">
                         <div class="card">
-                            <img src="https://cdn.discordapp.com/attachments/886044529881403462/909634364856479815/IMG-d04dfff8de2d36484fccd20c50228e63-V.jpg" alt="Ryan" width = "200" height = "300" />
+                            <img src="https://cdn.discordapp.com/attachments/886044529881403462/909634364856479815/IMG-d04dfff8de2d36484fccd20c50228e63-V.jpg" alt="Ryan" width = "190" height = "300" />
                             <div class="container">
                                 <h2>Ryan Vong</h2>
                                 <p class="title">Software Engineer</p>
@@ -66,7 +66,7 @@ export default class AboutUs extends Component {
                 <! -- Jasper Shen -->
                     <div class="column">
                         <div class="card">
-                            <img src="https://media.discordapp.net/attachments/715017264361111563/867076500368785478/unknown.png?width=728&height=713" alt="Jasper" width = "250" height = "300" />
+                            <img src="https://media.discordapp.net/attachments/715017264361111563/867076500368785478/unknown.png?width=728&height=713" alt="Jasper" width = "260" height = "300" />
                             <div class="container">
                                 <h2>Jasper Shen</h2>
                                 <p class="title">Product Designer</p>
@@ -96,7 +96,7 @@ export default class AboutUs extends Component {
                 <! -- Cameron Jackson -->
                     <div class="column">
                         <div class="card">
-                            <img src="https://media.discordapp.net/attachments/885725394110644224/909154845120946186/Screen_Shot_2021-11-13_at_10.56.41_AM.png" alt="Cameron" width = "250" height = "300" />
+                            <img src="https://media.discordapp.net/attachments/885725394110644224/909154845120946186/Screen_Shot_2021-11-13_at_10.56.41_AM.png" alt="Cameron" width = "260" height = "300" />
                             <div class="container">
                                 <h2>Cameron Jackson</h2>
                                 <p class="title">Our Mentor</p>
