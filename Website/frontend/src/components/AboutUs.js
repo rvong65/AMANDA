@@ -85,7 +85,7 @@ export default class AboutUs extends Component {
                             <div class="container">
                                 <h2>Nick Goodchild</h2>
                                 <p class="title">Software Engineer</p>
-                                <br />Add some text description
+                                <br />Nick is a high school senior from a town in the middle of nowhere; Ashburnham, Massachusetts. He loves all things STEM, and is planning on pursuing a degree in Robotics Engineering and/or Math Education.
                                 <br /><br />nickgoodchild654@gmail.com
                                 <br /><br /><button class="button">Contact</button>
                             </div>
