@@ -81,7 +81,7 @@ export default class AboutUs extends Component {
                 <! -- Nick Goodchild -->
                     <div class="column">
                         <div class="card">
-                            <img src="https://cdn.discordapp.com/attachments/886044587712450630/909174573071761438/default-profile-icon-24.png" alt="Nick" width = "250" height = "300" />
+                            <img src="https://cdn.discordapp.com/attachments/886044587712450630/909635675853324288/GoodchildNicholasSenior.jpg" alt="Nick" width = "250" height = "300" />
                             <div class="container">
                                 <h2>Nick Goodchild</h2>
                                 <p class="title">Software Engineer</p>
