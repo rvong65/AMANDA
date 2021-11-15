@@ -63,7 +63,7 @@ export default class AboutUs extends Component {
                     {/* <! -- Ryan Vong --> */}
                     <div class="column">
                         <div class="card">
-                            <img class="profile-picture" src="/w3images/team3.jpg" alt="Ryan" />
+                            <img class="profile-picture" src="https://cdn.discordapp.com/attachments/886044529881403462/909634364856479815/IMG-d04dfff8de2d36484fccd20c50228e63-V.jpg" alt="Ryan" />
                             <div class="container">
                                 <h2>Ryan Vong</h2>
                                 <p class="title">Software Engineer</p>
@@ -81,7 +81,7 @@ export default class AboutUs extends Component {
                             <div class="container">
                                 <h2>Nick Goodchild</h2>
                                 <p class="title">Software Engineer</p>
-                                <br />Add some text description
+                                <br />Nick is a high school senior from a town in the middle of nowhere; Ashburnham, Massachusetts. He loves all things STEM, and is planning on pursuing a degree in Robotics Engineering and/or Math Education.
                                 <br /><br />nickgoodchild654@gmail.com
                                 <br /><br /><button class="button">Contact</button>
                             </div>
