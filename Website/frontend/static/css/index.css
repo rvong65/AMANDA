@@ -19,6 +19,11 @@ body {
   }
 }
 
+/* NavBar */
+.logo {
+  width: 50px;
+}
+
 /* Home Page */
 p {
   margin: 0;
@@ -27,9 +32,8 @@ p {
 
 .briefInfo {
   align-items: center;
-  text-align:center ;
-  width: 1000px;
-  margin-left: 25%;
+  text-align: center;
+  width: 100%;
   color: white;
 }
 
@@ -161,17 +165,24 @@ ion-icon {
   box-sizing: inherit;
 }
 
+.row {
+  display: flex;
+}
+
 .column {
-  float: center;
   width: 33.3%;
   margin-bottom: 16px;
-  padding: 0 8px;
+  padding: 1em;
+  display: inline-block;
 }
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 8px;
-  color: white;
+  color: black;
+  background-color: white;
+  display: flex;
+  border-radius: 3px;
 }
 
 .about-section {
@@ -182,7 +193,7 @@ ion-icon {
 }
 
 .container {
-  padding: 0 16px;
+  position: relative;
 }
 
 .container::after, .row::after {
@@ -204,7 +215,10 @@ ion-icon {
   background-color: #000;
   text-align: center;
   cursor: pointer;
+  border-bottom-right-radius: 3px;
   width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 .button:hover {
@@ -219,7 +233,10 @@ ion-icon {
 }
 
 .profile-picture {
-  width: 100%;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
 }
 
 h2.our-team {

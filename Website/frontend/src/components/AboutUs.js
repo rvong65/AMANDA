@@ -58,8 +58,8 @@ export default class AboutUs extends Component {
                             </div>
                         </div>
                     </div>
-                    {/* 
-
+                </div>
+                <div class="row">
                     {/* <! -- Ryan Vong --> */}
                     <div class="column">
                         <div class="card">
