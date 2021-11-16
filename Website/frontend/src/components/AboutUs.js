@@ -14,13 +14,12 @@ export default class AboutUs extends Component {
                     <h1>About Us Page</h1>
                     <p>INTRODUCING TEAM XMEN</p>
                 </div>
-
-                <h2 class="our-team">Our Team</h2>
+            
                 <div class="row">
                     {/* <! -- Farzaan Wadiwalla --> */}
                     <div class="column">
                         <div class="card">
-                            <img class="profile-picture" src="https://media.discordapp.net/attachments/893914165884882994/909167195249057873/IMG_9805.PNG?width=334&height=593" alt="Farzaan" />
+                            <img class="profile-picture" src="https://cdn.discordapp.com/attachments/886044645036019722/910024586261823548/IMG_9805.PNG" alt="Farzaan" style="width:100% />
                             <div class="container">
                                 <h2>Farzaan Wadiwalla</h2>
                                 <p class="title">Product Analyst</p>
@@ -34,7 +33,7 @@ export default class AboutUs extends Component {
                     {/* <! -- Daniel Gao --> */}
                     <div class="column">
                         <div class="card">
-                            <img class="profile-picture" src="https://cdn.discordapp.com/attachments/885725394110644224/909133221889982524/profile_photo.png" alt="Daniel" />
+                            <img class="profile-picture" src="https://cdn.discordapp.com/attachments/885725394110644224/909133221889982524/profile_photo.png" alt="Daniel" style="width:100% />
                             <div class="container">
                                 <h2>Daniel Gao</h2>
                                 <p class="title">Product Lead</p>
@@ -48,7 +47,7 @@ export default class AboutUs extends Component {
                     {/* <! -- Jasper Shen --> */}
                     <div class="column">
                         <div class="card">
-                            <img class="profile-picture" src="https://media.discordapp.net/attachments/715017264361111563/867076500368785478/unknown.png?width=728&height=713" alt="Jasper" />
+                            <img class="profile-picture" src="https://media.discordapp.net/attachments/715017264361111563/867076500368785478/unknown.png?width=728&height=713" alt="Jasper" style="width:100% />
                             <div class="container">
                                 <h2>Jasper Shen</h2>
                                 <p class="title">Product Designer</p>
@@ -63,7 +62,7 @@ export default class AboutUs extends Component {
                     {/* <! -- Ryan Vong --> */}
                     <div class="column">
                         <div class="card">
-                            <img class="profile-picture" src="https://cdn.discordapp.com/attachments/886044529881403462/910008541169995796/Screenshot_2021-11-15_192817.png" alt="Ryan" />
+                            <img class="profile-picture" src="https://cdn.discordapp.com/attachments/886044529881403462/910008541169995796/Screenshot_2021-11-15_192817.png" alt="Ryan" style="width:100%/>
                             <div class="container">
                                 <h2>Ryan Vong</h2>
                                 <p class="title">Product Engineer</p>
@@ -77,7 +76,7 @@ export default class AboutUs extends Component {
                     {/* <! -- Nick Goodchild --> */}
                     <div class="column">
                         <div class="card">
-                            <img class="profile-picture" src="https://cdn.discordapp.com/attachments/886044587712450630/909174573071761438/default-profile-icon-24.png" alt="Nick" />
+                            <img class="profile-picture" src="https://cdn.discordapp.com/attachments/886044587712450630/909635675853324288/GoodchildNicholasSenior.jpg" alt="Nick" style="width:100%/>
                             <div class="container">
                                 <h2>Nick Goodchild</h2>
                                 <p class="title">Product Engineer</p>
@@ -91,7 +90,7 @@ export default class AboutUs extends Component {
                     {/* <! -- Cameron Jackson --> */}
                     <div class="column">
                         <div class="card">
-                            <img class="profile-picture" src="https://media.discordapp.net/attachments/885725394110644224/909154845120946186/Screen_Shot_2021-11-13_at_10.56.41_AM.png" alt="Cameron" />
+                            <img class="profile-picture" src="https://media.discordapp.net/attachments/885725394110644224/909154845120946186/Screen_Shot_2021-11-13_at_10.56.41_AM.png" alt="Cameron" style="width:100%/>
                             <div class="container">
                                 <h2>Cameron Jackson</h2>
                                 <p class="title">Mentor</p>
