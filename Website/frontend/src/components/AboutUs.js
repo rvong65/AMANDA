@@ -15,22 +15,25 @@ export default class AboutUs extends Component {
                     <p>INTRODUCING TEAM XMEN</p>
                 </div>
             
-                <div class="row">
+                
                     {/* <! -- Farzaan Wadiwalla --> */}
-                    <div class="column">
-                        <div class="card">
-                            <img class="profile-picture" src="https://cdn.discordapp.com/attachments/886044645036019722/910024586261823548/IMG_9805.PNG" alt="Farzaan" style="width:100% />
-                            <div class="container">
-                                <h2>Farzaan Wadiwalla</h2>
-                                <p class="title">Product Analyst</p>
-                                <br />Farzaan is a junior at Lincoln Highschool in Portland, Oregon. He is fascinated by the world of artificial intelligence and hopes to further his knowledge in AI-technology to solve real-world problems.
-                                <br /><br />farzaanw@gmail.com
-                                <br /><br /><button class="button">Contact</button>
-                            </div> 
+                    <div class="row">
+                        <div class="column">
+                            <div class="card">
+                                <img class="profile-picture" src="https://cdn.discordapp.com/attachments/886044645036019722/910024586261823548/IMG_9805.PNG" alt="Farzaan" style="width:100% />
+                                <div class="container">
+                                    <h2>Farzaan Wadiwalla</h2>
+                                    <p class="title">Product Analyst</p>
+                                    <br />Farzaan is a junior at Lincoln Highschool in Portland, Oregon. He is fascinated by the world of artificial intelligence and hopes to further his knowledge in AI-technology to solve real-world problems.
+                                    <br /><br />farzaanw@gmail.com
+                                    <br /><br /><button class="button">Contact</button>
+                                </div> 
+                            </div>
                         </div>
                     </div>
 
                     {/* <! -- Daniel Gao --> */}
+ 
                     <div class="column">
                         <div class="card">
                             <img class="profile-picture" src="https://cdn.discordapp.com/attachments/885725394110644224/909133221889982524/profile_photo.png" alt="Daniel" style="width:100% />
