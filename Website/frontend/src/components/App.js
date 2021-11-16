@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "./HomePage";
+import AboutUs from "./AboutUs"
 
 export default class App extends Component {
     constructor(props) {
@@ -9,9 +11,12 @@ export default class App extends Component {
 
     render() {
         return (
-            <div>
-                <HomePage />
-            </div>
+            <Router>
+                <Switch>
+                    <Route exact path="/" component={HomePage} />
+                    <Route path="/about" component={AboutUs} />
+                </Switch>
+            </Router>
         );
     }
 }
