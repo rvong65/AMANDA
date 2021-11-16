@@ -149,8 +149,12 @@ ion-icon {
   max-width: 600px;
 }
 
+.githubLogo{
+  align-items:center;
+}
+
 .githubLogo button{
-  background: white;
+  background: transparent;
   border: none;
   height: 40px;
   width: 43px;
@@ -158,7 +162,12 @@ ion-icon {
   cursor: pointer;
   transition: all 0.3s ease;
   border-radius: 100%;
+  align-items:center;
 }
+.githubLogo button:hover{
+  background: white;
+}
+
 
 /* About Us Page */
 *, *:before, *:after {
