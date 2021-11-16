@@ -11,32 +11,30 @@ export default class AboutUs extends Component {
             <>
                 <Navbar />
                 <div class="about-section">
-                    <h1>About Us Page</h1>
+                    <h1>About Us</h1>
                     <p>INTRODUCING TEAM XMEN</p>
                 </div>
             
                 
+                <div class="row">
                     {/* <! -- Farzaan Wadiwalla --> */}
-                    <div class="row">
-                        <div class="column">
-                            <div class="card">
-                                <img class="profile-picture" src="https://cdn.discordapp.com/attachments/886044645036019722/910024586261823548/IMG_9805.PNG" alt="Farzaan" style="width:100% />
-                                <div class="container">
-                                    <h2>Farzaan Wadiwalla</h2>
-                                    <p class="title">Product Analyst</p>
-                                    <br />Farzaan is a junior at Lincoln Highschool in Portland, Oregon. He is fascinated by the world of artificial intelligence and hopes to further his knowledge in AI-technology to solve real-world problems.
-                                    <br /><br />farzaanw@gmail.com
-                                    <br /><br /><button class="button">Contact</button>
-                                </div> 
-                            </div>
+                    <div class="column">
+                        <div class="card">
+                            <img class="profile-picture" src="https://cdn.discordapp.com/attachments/886044645036019722/910024586261823548/IMG_9805.PNG" alt="Farzaan" />
+                            <div class="container">
+                                <h2>Farzaan Wadiwalla</h2>
+                                <p class="title">Product Analyst</p>
+                                <br />Farzaan is a junior at Lincoln Highschool in Portland, Oregon. He is fascinated by the world of artificial intelligence and hopes to further his knowledge in AI-technology to solve real-world problems.
+                                <br /><br />farzaanw@gmail.com
+                                <br /><br /><button class="button">Contact</button>
+                            </div> 
                         </div>
                     </div>
 
                     {/* <! -- Daniel Gao --> */}
- 
                     <div class="column">
                         <div class="card">
-                            <img class="profile-picture" src="https://cdn.discordapp.com/attachments/885725394110644224/909133221889982524/profile_photo.png" alt="Daniel" style="width:100% />
+                            <img class="profile-picture" src="https://cdn.discordapp.com/attachments/885725394110644224/909133221889982524/profile_photo.png" alt="Daniel" />
                             <div class="container">
                                 <h2>Daniel Gao</h2>
                                 <p class="title">Product Lead</p>
@@ -50,7 +48,7 @@ export default class AboutUs extends Component {
                     {/* <! -- Jasper Shen --> */}
                     <div class="column">
                         <div class="card">
-                            <img class="profile-picture" src="https://media.discordapp.net/attachments/715017264361111563/867076500368785478/unknown.png?width=728&height=713" alt="Jasper" style="width:100% />
+                            <img class="profile-picture" src="https://media.discordapp.net/attachments/715017264361111563/867076500368785478/unknown.png?width=728&height=713" alt="Jasper" />
                             <div class="container">
                                 <h2>Jasper Shen</h2>
                                 <p class="title">Product Designer</p>
@@ -65,7 +63,7 @@ export default class AboutUs extends Component {
                     {/* <! -- Ryan Vong --> */}
                     <div class="column">
                         <div class="card">
-                            <img class="profile-picture" src="https://cdn.discordapp.com/attachments/886044529881403462/910008541169995796/Screenshot_2021-11-15_192817.png" alt="Ryan" style="width:100%/>
+                            <img class="profile-picture" src="https://cdn.discordapp.com/attachments/886044529881403462/910008541169995796/Screenshot_2021-11-15_192817.png" alt="Ryan" />
                             <div class="container">
                                 <h2>Ryan Vong</h2>
                                 <p class="title">Product Engineer</p>
@@ -79,7 +77,7 @@ export default class AboutUs extends Component {
                     {/* <! -- Nick Goodchild --> */}
                     <div class="column">
                         <div class="card">
-                            <img class="profile-picture" src="https://cdn.discordapp.com/attachments/886044587712450630/909635675853324288/GoodchildNicholasSenior.jpg" alt="Nick" style="width:100%/>
+                            <img class="profile-picture" src="https://cdn.discordapp.com/attachments/886044587712450630/909635675853324288/GoodchildNicholasSenior.jpg" alt="Nick" />
                             <div class="container">
                                 <h2>Nick Goodchild</h2>
                                 <p class="title">Product Engineer</p>
@@ -93,7 +91,7 @@ export default class AboutUs extends Component {
                     {/* <! -- Cameron Jackson --> */}
                     <div class="column">
                         <div class="card">
-                            <img class="profile-picture" src="https://media.discordapp.net/attachments/885725394110644224/909154845120946186/Screen_Shot_2021-11-13_at_10.56.41_AM.png" alt="Cameron" style="width:100%/>
+                            <img class="profile-picture" src="https://media.discordapp.net/attachments/885725394110644224/909154845120946186/Screen_Shot_2021-11-13_at_10.56.41_AM.png" alt="Cameron" />
                             <div class="container">
                                 <h2>Cameron Jackson</h2>
                                 <p class="title">Mentor</p>
