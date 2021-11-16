@@ -63,7 +63,7 @@ export default class AboutUs extends Component {
                     {/* <! -- Ryan Vong --> */}
                     <div class="column">
                         <div class="card">
-                            <img class="profile-picture" src="https://cdn.discordapp.com/attachments/886044529881403462/909634364856479815/IMG-d04dfff8de2d36484fccd20c50228e63-V.jpg" alt="Ryan" />
+                            <img class="profile-picture" src="https://cdn.discordapp.com/attachments/886044529881403462/910008541169995796/Screenshot_2021-11-15_192817.png" alt="Ryan" />
                             <div class="container">
                                 <h2>Ryan Vong</h2>
                                 <p class="title">Software Engineer</p>
