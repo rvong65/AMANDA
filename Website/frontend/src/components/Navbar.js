@@ -36,17 +36,15 @@ function Navbar(){
     <AppBar position="static" style={{backgroundColor: "#000080"}}>
       <CssBaseline />
       <Toolbar>
-        <Typography variant="h4" className={classes.logo}>
-          Logo goes here
-        </Typography>
-          <div className={classes.navlinks}>
-            <Link to="/" className={classes.link}>
-              Home
-            </Link>
-            <Link to="/about" className={classes.link}>
-              About
-            </Link>
-          </div>
+        <img class="logo" src="./../../static/images/AMANDA_Logo.png" />
+        <div className={classes.navlinks}>
+          <Link to="/" className={classes.link}>
+            Home
+          </Link>
+          <Link to="/about" className={classes.link}>
+            About
+          </Link>
+        </div>
       </Toolbar>
     </AppBar>
   );
