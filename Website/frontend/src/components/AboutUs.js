@@ -52,7 +52,7 @@ export default class AboutUs extends Component {
                             <div class="container">
                                 <h2>Jasper Shen</h2>
                                 <p class="title">Product Designer</p>
-                                <br />I am a high school student in Colorado that programs for fun. I hope to be able to connect artificial intelligence and neuroscience in some way.
+                                <br />Jasper is a high school student in Colorado that programs for fun. He hopes to be able to connect artificial intelligence and neuroscience in some way.
                                 <br /><br />jaspershen21@gmail.com
                                 <br /><br /><button class="button">Contact</button>
                             </div>
