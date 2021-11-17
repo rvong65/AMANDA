@@ -31,7 +31,7 @@ p {
 }
 
 .briefInfo {
-  align-items: center;
+  left: 50%;
   text-align: center;
   width: 100%;
   color: white;
@@ -65,6 +65,7 @@ p {
   margin-left: 30%;
   margin-right: 30%;
   margin-top: 5%;
+  left:50%;
 
 }
 
@@ -150,7 +151,8 @@ ion-icon {
 }
 
 .githubLogo{
-  align-items:center;
+  margin: auto;
+  width: 50%;
 }
 
 .githubLogo button{
@@ -158,11 +160,14 @@ ion-icon {
   border: none;
   height: 40px;
   width: 43px;
-  font-size: 30px;
+  font-size:39px;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-radius: 100%;
+  border-radius: 50%;
   align-items:center;
+  position: absolute;
+  top: 100%;
+  left: 49%;
 }
 .githubLogo button:hover{
   background: white;
@@ -198,12 +203,13 @@ html {
 .about-section {
   padding: 50px;
   text-align: center;
-  background-color: #fafafa85;
   color: white;
 }
 
 .container {
   position: relative;
+  padding-left: 2%;
+
 }
 
 .container::after, .row::after {
@@ -216,24 +222,6 @@ html {
   color: rgb(77, 72, 72);
 }
 
-.button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  border-bottom-right-radius: 3px;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-}
-
-.button:hover {
-  background-color: #555;
-}
 
 @media screen and (max-width: 650px) {
   .column {
