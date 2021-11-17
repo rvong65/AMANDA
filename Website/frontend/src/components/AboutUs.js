@@ -25,8 +25,10 @@ export default class AboutUs extends Component {
                                 <h2>Farzaan Wadiwalla</h2>
                                 <p class="title">Product Analyst</p>
                                 <br />Farzaan is a junior at Lincoln Highschool in Portland, Oregon. He is fascinated by the world of artificial intelligence and hopes to further his knowledge in AI-technology to solve real-world problems.
-                                <br /><br />farzaanw@gmail.com
-                                <br /><br /><button class="button">Contact</button>
+                                <br /><br />Contact Information:
+                                <br />farzaanw@gmail.com
+                            
+                             
                             </div> 
                         </div>
                     </div>
@@ -39,8 +41,9 @@ export default class AboutUs extends Component {
                                 <h2>Daniel Gao</h2>
                                 <p class="title">Product Lead</p>
                                 <br />Daniel is a high school student from San Francisco who is interested in CS and Math. He hopes to explore the applications of AI and use them to solve problems in the world.
-                                <br /><br />dgao22@siprep.org
-                                <br /><br /><button class="button">Contact</button>
+                                <br /><br />Contact Information:
+                                <br />dgao22@siprep.org
+                          
                             </div>
                         </div>
                     </div>
@@ -53,8 +56,9 @@ export default class AboutUs extends Component {
                                 <h2>Jasper Shen</h2>
                                 <p class="title">Product Designer</p>
                                 <br />Jasper is a high school student in Colorado that programs for fun. He hopes to be able to connect artificial intelligence and neuroscience in some way.
-                                <br /><br />jaspershen21@gmail.com
-                                <br /><br /><button class="button">Contact</button>
+                                <br /><br />Contact Information:
+                                <br />jaspershen21@gmail.com
+                           
                             </div>
                         </div>
                     </div>
@@ -68,8 +72,9 @@ export default class AboutUs extends Component {
                                 <h2>Ryan Vong</h2>
                                 <p class="title">Product Engineer</p>
                                 <br />Ryan is a high school senior who resides in Los Angeles, California. In his free time, he usually reads sci-fi books and overall he has a spontaneous personality who likes trying new things.
-                                <br /><br />ryanvong8@gmail.com
-                                <br /><br /><button class="button">Contact</button>
+                                <br /><br />Contact Information:
+                                <br />ryanvong8@gmail.com
+                              
                             </div>
                         </div>
                     </div>
@@ -82,8 +87,9 @@ export default class AboutUs extends Component {
                                 <h2>Nick Goodchild</h2>
                                 <p class="title">Product Engineer</p>
                                 <br />Nick is a high school senior from a town in the middle of nowhere; Ashburnham, Massachusetts. He loves all things STEM, and is planning on pursuing a degree in Robotics Engineering and/or Math Education.
-                                <br /><br />nickgoodchild654@gmail.com
-                                <br /><br /><button class="button">Contact</button>
+                                <br /><br />Contact Information:
+                                <br />nickgoodchild654@gmail.com
+                            
                             </div>
                         </div>
                     </div>
@@ -96,7 +102,7 @@ export default class AboutUs extends Component {
                                 <h2>Cameron Jackson</h2>
                                 <p class="title">Mentor</p>
                                 <br />Cameron Jackson attends the University of Texas at Dallas as a Software Engineering major. Cameron enjoys knitting, playing chess and learning about cutting edge AI in his free time. He is deeply interested in way too many different fields of AI and sharing this passion with everyone within earshot.
-                                <br /><br /><button class="button">Contact</button>
+                               
                             </div>
                         </div>
                     </div>
