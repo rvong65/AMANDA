@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 //Style component
 const useStyles = makeStyles((theme) => ({
   navlinks: {
-    marginLeft: "85%",
+    marginLeft: "75%",
     display: "flex",
     flexGrow: "1",
     borderRadius: "5px"
