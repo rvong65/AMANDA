@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 //Style component
 const useStyles = makeStyles((theme) => ({
   navlinks: {
-    marginLeft: "75%",
+    marginLeft: "65%",
     display: "flex",
     flexGrow: "1",
     borderRadius: "5px"
@@ -14,6 +14,8 @@ const useStyles = makeStyles((theme) => ({
   logo: {
     flexGrow: "1",
     cursor: "pointer",
+    marginLeft: "0.5%",
+    fontFamily: 'Orbitron'
   },
 
   link: {
@@ -37,6 +39,9 @@ function Navbar(){
       <CssBaseline />
       <Toolbar>
         <img class="logo" src="./../../static/images/AMANDA_Logo.png" />
+        <Typography className={classes.logo}> 
+          <h1> A.M.A.N.D.A.</h1>
+          </Typography> 
         <div className={classes.navlinks}>
           <Link to="/" className={classes.link}>
             Home
