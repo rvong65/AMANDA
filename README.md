@@ -1,4 +1,5 @@
-<img src="./Website/frontend/static/images/AMANDA_Logo.png" alt="AMANDA logo" width="50" style="user-select: none; float: left" /> 
+<a href="#"><img src="./Website/frontend/static/images/AMANDA_Logo.png" alt="AMANDA logo" width="50" style="float: left;" /></a>
+
 # A.M.A.N.D.A.
 
 ## Requirements
