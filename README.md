@@ -1,4 +1,5 @@
 <img src="./Website/frontend/static/images/AMANDA_Logo.png" alt="AMANDA logo" width="50" />
+
 # A.M.A.N.D.A.
 
 ## Requirements
@@ -35,35 +36,35 @@ nom run build
 ```
 
 ## Important Files & Directories
-Website/api
-: The backend/Django REST API part containing the models, serializers, and views 
+- **Website/api**
+  - The backend/Django REST API part containing the models, serializers, and views 
 
-Website/api/models.py
-: Contains models with defined attributes
+- **Website/api/models.py**
+  - Contains models with defined attributes
 
-Website/api/serializers.py
-: Setup base data requirements for each model
+- **Website/api/serializers.py**
+  - Setup base data requirements for each model
 
-Website/api/views.py
-: Sends and recieves data to and from the API, YOLO classifier, and BlenderBot chatbot then sends responses back to the frontend
+- **Website/api/views.py**
+  - Sends and recieves data to and from the API, YOLO classifier, and BlenderBot chatbot then sends responses back to the frontend
 
-Website/frontend
-: The frontend/React part containing the HTML template, node modules, and Javascript files for the webpage
+- **Website/frontend**
+  - The frontend/React part containing the HTML template, node modules, and Javascript files for the webpage
 
-Website/frontend/static/css/index.css
-: Contains CSS code for every file in the src folder
+- **Website/frontend/static/css/index.css**
+  - Contains CSS code for every file in the src folder
 
-Website/frontend/src/components/HomePage.js
-: Contains code for the title, description, and chatroom 
+- **Website/frontend/src/components/HomePage.js**
+  - Contains code for the title, description, and chatroom 
 
-Website/frontend/src/components/AboutUs.js
-: Contains code for the About Us page
+- **Website/frontend/src/components/AboutUs.js**
+  - Contains code for the About Us page
 
-Website/frontend/src/components/Navbar.js
-: Contains code for the navigation bar
+- **Website/frontend/src/components/Navbar.js**
+  - Contains code for the navigation bar
 
-Website/frontend/src/components/Message.js
-: Contains base code for each message in chatroom
+- **Website/frontend/src/components/Message.js**
+  - Contains base code for each message in chatroom
 
 ## Design Notes
 
