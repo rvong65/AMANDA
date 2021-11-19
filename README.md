@@ -1,4 +1,4 @@
-<a href="#"><img src="./Website/frontend/static/images/AMANDA_Logo.png" alt="AMANDA logo" width="50" style="float: left;" /></a>
+<a href="#"><img src="./Website/frontend/static/images/AMANDA_Logo.png" alt="AMANDA logo" /></a>
 
 # A.M.A.N.D.A.
 
