@@ -8,8 +8,8 @@
 
 ## Project Notes
 
-(Image of final product frontpage)
-
+![Chatroom image](https://media.discordapp.net/attachments/715017264361111563/911474112457744404/unknown.png?width=705&height=669)
+     
 A.M.A.N.D.A. is a trained medical assistant AI that detects medical diseases and provides treatments. More specifically, it can detect cellulitis and different degrees of burns. In addition to the detection, A.M.A.N.D.A. is capable of maintaining conversations.
 
 ## Setup
