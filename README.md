@@ -16,18 +16,24 @@ A.M.A.N.D.A. is a trained medical assistant AI that detects medical diseases and
 In the Website folder:
 ```
 # First
-python manage.py makemigrations
+pip install -r requirements.txt
 
 # Second
-python manage.py migrate
+python manage.py makemigrations
 
 # Third
+python manage.py migrate
+
+# Fourth
 python manage.py runserver
 ```
 
 ## Front-End Compiling
 In the Website/frontend folder:
 ```
+# Prerequisite
+npm update
+
 # For development
 npm run dev
 
