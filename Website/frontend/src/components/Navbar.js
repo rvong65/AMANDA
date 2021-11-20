@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
 function Navbar(){
   const classes = useStyles();
   return (
-    <AppBar position="static" style={{backgroundColor: "#274472"}}>
+    <AppBar position="static" style={{backgroundColor: "#12232E"}}>
       <CssBaseline />
       <Toolbar>
         <img class="logo" src="./../../static/images/AMANDA_Logo.png" />
