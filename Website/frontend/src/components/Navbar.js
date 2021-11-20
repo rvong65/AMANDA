@@ -39,9 +39,9 @@ function Navbar(){
       <CssBaseline />
       <Toolbar>
         <img class="logo" src="./../../static/images/AMANDA_Logo.png" />
-        <Typography className={classes.logo}> 
+        <Typography> 
           <h1> A.M.A.N.D.A.</h1>
-          </Typography> 
+        </Typography> 
         <div className={classes.navlinks}>
           <Link to="/" className={classes.link}>
             Home
