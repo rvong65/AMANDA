@@ -14,4 +14,6 @@ node_modules/
 # uploaded images, but not folder
 Website/media/post_images/*
 
+.env
+
 !.gitkeep
