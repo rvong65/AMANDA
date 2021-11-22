@@ -81,4 +81,4 @@ A.M.A.N.D.A. was mainly made for those who don't have access to medical care, wh
 - Ryan Vong ([ryanvong65](https://github.com/rvong65))
 - Jasper Shen ([CreeptonThingz](https://github.com/CreeptonThingz))
 - Farzaan Wadiwalla ([Farzaankw](https://github.com/Farzaankw))
-- Nick Goodchild ([username](url))
+- Nick Goodchild ([GoodyJr12](https://github.com/GoodyJr12))
