@@ -12,7 +12,7 @@ export default class AboutUs extends Component {
                 <Navbar />
                 <div class="about-section">
                     <h1>About Us</h1>
-                    <p>INTRODUCING TEAM XMEN</p>
+                    <p>INTRODUCING TEAM X-MEN</p>
                 </div>
             
                 
