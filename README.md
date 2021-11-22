@@ -1,6 +1,7 @@
 <a href="#"><img src="./Website/frontend/static/images/AMANDA_Logo.png" alt="AMANDA logo" width="150" /></a>
 
 # A.M.A.N.D.A.
+*AI Medical Assistant & Neural Detection Application*
 
 ## Requirements
 - Node.js
