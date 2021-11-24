@@ -77,6 +77,9 @@ nom run build
 
 A.M.A.N.D.A. was mainly made for those who don't have access to medical care, whether it be too expensive or unsupported in a certain area. Being lightweight, hasty, and straight to the point, A.M.A.N.D.A. strives to help those aforementioned in their small medical needs.
 
+## License
+A.M.A.N.D.A. is available under the [MIT license](LICENSE).
+
 ## Credits
 - Daniel Gao ([danielgao20](https://github.com/danielgao20))
 - Ryan Vong ([ryanvong65](https://github.com/rvong65))
